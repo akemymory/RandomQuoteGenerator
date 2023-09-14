@@ -36,21 +36,21 @@ const RandomQuote = () => {
   loadQuotes();
 
   return (
-    <div className="container">
-      <Container fluid="md">
+    <Container fluid="sm">
+      <div className="container">
         <Row>
-          <Col>
+          <Col sm={12}>
             <div className="quote">{quote.text}</div>
             <hr />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col sm={12}>
             <p className="author">- {quote.author.split(",")[0]}</p>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col sm={12}>
             <div className="icons">
               <img
                 className="icons"
@@ -71,8 +71,8 @@ const RandomQuote = () => {
             </div>
           </Col>
         </Row>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 
