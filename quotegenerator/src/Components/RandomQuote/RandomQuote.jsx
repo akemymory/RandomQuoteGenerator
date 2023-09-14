@@ -3,6 +3,9 @@ import { useState } from "react";
 import "./RandomQuote.css";
 import xlogo from "../Assets/xlogo.png";
 import refresh from "../Assets/refresh.png";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const RandomQuote = () => {
   let quotes = [];
@@ -34,27 +37,41 @@ const RandomQuote = () => {
 
   return (
     <div className="container">
-      <div className="quote">{quote.text}</div>
-      <div className="line"></div>
-      <div className="bottom">
-        <div className="author">- {quote.author.split(",")[0]}</div>
-        <div className="icons">
-          <img
-            src={refresh}
-            onClick={() => {
-              random();
-            }}
-            alt="refresh icon"
-          />
-          <img
-            src={xlogo}
-            onClick={() => {
-              twitter();
-            }}
-            alt="x logo"
-          />
-        </div>
-      </div>
+      <Container fluid="md">
+        <Row>
+          <Col>
+            <div className="quote">{quote.text}</div>
+            <hr />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p className="author">- {quote.author.split(",")[0]}</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className="icons">
+              <img
+                className="icons"
+                src={refresh}
+                onClick={() => {
+                  random();
+                }}
+                alt="refresh icon"
+              />
+              <img
+                className="icons"
+                src={xlogo}
+                onClick={() => {
+                  twitter();
+                }}
+                alt="x logo"
+              />
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
